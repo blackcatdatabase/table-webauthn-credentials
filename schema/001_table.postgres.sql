@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-postgres.yaml
+-- Auto-generated from schema-map-postgres.yaml (map@sha1:FAEA49A5D5F8FAAD9F850D0F430ED451C5C1D707)
 -- engine: postgres
 -- table:  webauthn_credentials
 
@@ -13,5 +13,5 @@ CREATE TABLE IF NOT EXISTS webauthn_credentials (
   created_at TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   last_used_at TIMESTAMPTZ(6) NULL,
   sign_count BIGINT NOT NULL DEFAULT 0,
-  CONSTRAINT uq_webauthn_cred UNIQUE (rp_id, credential_id)
+  CONSTRAINT ux_webauthn_cred UNIQUE (rp_id, credential_id)
 );
