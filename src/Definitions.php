@@ -99,7 +99,7 @@ final class Definitions {
 
     /** True when the table is suitable for row-lock tests (no cascading FK, small row width, etc.). */
     public static function isRowLockSafe(): bool {
-        return false;
+        return true;
     }
 
     /** Convenience alias - does the table have a version column for optimistic locking? */
@@ -117,7 +117,7 @@ final class Definitions {
     public static function isSoftDeleteEnabled(): bool { return self::softDeleteColumn() !== null; }
 
     /** @return string[] Columns containing PII for log/telemetry masking (module-specific). */
-    public static function piiColumns(): array { return [ 'credential_id', 'public_key' ]; }
+    public static function piiColumns(): array { return []; }
 
     // --- derived "HAS_*" flags as methods (instead of constants calling functions) ---
     public static function hasTenant(): bool {
