@@ -3,18 +3,18 @@
 WebAuthn credentials (passkeys) stored per RP id and user.
 
 ## Columns
-| Column | Type | Null | Default | Description |
-| --- | --- | --- | --- | --- |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| rp_id | VARCHAR(255) | NO |  | Relying Party ID (domain). |
-| subject | VARCHAR(128) | NO |  | Subject identifier (typically users.id). |
-| user_id | BIGINT | YES |  | Optional FK users.id for convenience joins. |
-| credential_id | VARCHAR(255) | NO |  | Credential identifier (base64/url-safe). |
-| public_key | TEXT | NO |  | Public key material for the credential. |
-| added_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | When the credential was added (UTC). |
-| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
-| last_used_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | When the credential was last used, if tracked. |
-| sign_count | BIGINT | NO | 0 | WebAuthn signature counter (for clone/replay detection). |
+| Column | Type | Null | Default | Description | Crypto |
+| --- | --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |  |
+| rp_id | VARCHAR(255) | NO |  | Relying Party ID (domain). |  |
+| subject | VARCHAR(128) | NO |  | Subject identifier (typically users.id). |  |
+| user_id | BIGINT | YES |  | Optional FK users.id for convenience joins. |  |
+| credential_id | VARCHAR(255) | NO |  | Credential identifier (base64/url-safe). |  |
+| public_key | TEXT | NO |  | Public key material for the credential. |  |
+| added_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | When the credential was added (UTC). |  |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |
+| last_used_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | When the credential was last used, if tracked. |  |
+| sign_count | BIGINT | NO | 0 | WebAuthn signature counter (for clone/replay detection). |  |
 
 ## Engine Details
 

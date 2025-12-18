@@ -1,0 +1,38 @@
+{
+  "tables": {
+    "webauthn_credentials": {
+      "columns": {
+        "added_at": {
+          "strategy": "passthrough"
+        },
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "credential_id": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "last_used_at": {
+          "strategy": "passthrough"
+        },
+        "public_key": {
+          "strategy": "passthrough"
+        },
+        "rp_id": {
+          "strategy": "passthrough"
+        },
+        "sign_count": {
+          "strategy": "passthrough"
+        },
+        "subject": {
+          "strategy": "passthrough"
+        },
+        "user_id": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
